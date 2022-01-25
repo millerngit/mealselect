@@ -1,0 +1,117 @@
+
+<html>
+<head>
+	<title>Meal Selector</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="mealstytle.css" rel="stylesheet">
+</head>
+       <script>
+
+
+        //gets main course    
+        function getMainCourse(){
+           
+            const MainCourseArray = ["Chicken", "Salmon","Tuna", "Steak", "Pork","Burgers","Roast","keilbasa","Hot Dog", "Tacos","Pizza","Hoagie","Chicken Tenders","Ribs,Meatloaf"];
+            const selectRand = Math.floor(Math.random() * MainCourseArray.length);
+            return(MainCourseArray[selectRand]);
+           
+        }
+       
+        // gets vegetable    
+        function getVegetable(){
+
+            const vegetableArray = ["Broccoli", "Spinach","Salad", "Asparagus", "Carrots","Brussel Sprouts","Collard Greens","Cauliflower", "Baked Beans","Green Beans","Zucchini","Mixed Vegetable"];
+            const selectRand = Math.floor(Math.random() * vegetableArray.length);
+            return(vegetableArray[selectRand]);
+
+        }
+
+        // gets side
+        function getSide(){
+
+            const sideArray = ["Mac and Cheese", "Mash potatoes","French Fries", "Chips and Salsa", "Rice","Baked Potato","Stuffing","Noodles","Soup"];
+            const selectRand = Math.floor(Math.random() * sideArray.length);
+            return(sideArray[selectRand]);
+             
+
+        }
+
+    
+
+
+        function outputFullMeal(){
+           
+             var mC = getMainCourse();
+             //console.log(mC);
+             document.getElementById("MainCourseDiv").innerHTML = mC;
+            
+
+             var v = getVegetable();
+             //console.log(v);
+             document.getElementById("vegetableDiv").innerHTML = v;
+
+             var s = getSide();
+             //console.log(s);
+             document.getElementById("sideDiv").innerHTML = s;
+
+        }
+
+        function outputMainCourse() {
+        	 var mC = getMainCourse();
+             //console.log(mC);
+             document.getElementById("MainCourseDiv").innerHTML = mC;
+		}
+
+		function outputVegetable() {
+			var v = getVegetable();
+             //console.log(v);
+             document.getElementById("vegetableDiv").innerHTML = v;
+		}
+
+		function outputSide() {
+			var s = getSide();
+             //console.log(s);
+             document.getElementById("sideDiv").innerHTML = s;
+		}
+
+
+
+        window.onload=function(){
+             //console.log("Noah Miller");
+             document.getElementById("fullMeal").onclick=outputFullMeal;
+             document.getElementById("maincourse").onclick=outputMainCourse;
+             document.getElementById("vegetable").onclick=outputVegetable;
+             document.getElementById("side").onclick=outputSide;
+            // document.getElementById("reset").onclick=resetbutton;
+    };
+       
+       
+       
+       
+     
+       
+       
+       
+    </script>
+<body>
+
+
+
+
+<input type="button" id="fullMeal" class="button"value="Full Meal" />
+<input type="button" id="maincourse" class="button"value="Main Course" />
+<input type="button" id="vegetable"  class="button"value="Vegetable"/>
+<input type="button" id="side"class="button"value="Side" />
+
+<div id="MainCourseDiv" class="div">
+</div>
+<div  id="vegetableDiv"class="div">
+	
+</div>
+<div id="sideDiv"class="div">
+	
+</div>
+
+</body>
+</html>
